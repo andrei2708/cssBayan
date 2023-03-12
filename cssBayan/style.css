@@ -8,15 +8,15 @@
 body {
   display: flex;
   justify-content: center;
-  background-color: #f6f6ec;
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
 }
 
 .wrapper {
-  width: 95%;
+  width: 820px;
   display: flex;
   justify-content: center;
+  background-color: #f6f6ec;
 }
 .accordion {
   width: 90%;
@@ -30,18 +30,12 @@ h1 {
   font-size: 4rem;
   font-style: italic;
 }
-@media (max-width: 819px){
-  h1 {
-    font-size: 3rem;
-    padding: 2rem 0;
-  }
-}
 .accordion-item {
   overflow: hidden;
   transition: all 1s ease;
 }
 .accordion-item:hover .accordion-content {
-  height: 20vh;
+  height: 55vh;
 }
 .accordion-item:hover .accordion-icon {
   opacity: 1;
@@ -59,7 +53,7 @@ h1 {
   padding: 10px 0;
   align-items: center;
   width: 100%;
-  font-size: 2rem;
+  font-size: 2.5rem;
   cursor: pointer;
 }
 .accordion-content {
@@ -84,18 +78,71 @@ span {
   transition: all .2s ease;
   cursor: pointer;
   margin-right: 10px;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 .mem-btn:checked ~ .accordion-content {
-  height: 20vh;
+  height: 55vh;
 }
 .mem-btn:checked ~ .title-container span {
   transform: rotate(0);
 }
-.accordion-item + .mem-btn:checked ~ .accordion-content {
+/* .accordion-item + .mem-btn:checked ~ .accordion-content {
   height: 20vh;
-}
+} */
 .mem-btn:checked ~ .accordion-content .accordion-icon {
   opacity: 1;
 }
 
+@media (max-width: 1440px){
+  .wrapper {
+    width: 820px;
+  }
+  h1 {
+    font-size: 3.5rem;
+    padding: 20px 0;
+  }
+  .accordion-title {
+    padding: 10px 0;
+    font-size: 2rem;
+  }
+  span {
+    font-size: 2rem;
+  }
+  .accordion-icon {
+    height: 90%;
+    opacity: 0;
+  }
+  .accordion-item:hover .accordion-content {
+    height: 50vh;
+  }
+  .mem-btn:checked ~ .accordion-content {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 819px){
+  .wrapper {
+    width: 100%;
+  }
+  h1 {
+    font-size: 3rem;
+    padding: 20px 0;
+  }
+  .accordion-title {
+    padding: 15px 0;
+    font-size: 1.8rem;
+  }
+  span {
+    font-size: 2rem;
+  }
+  .accordion-icon {
+    height: 75%;
+    opacity: 0;
+  }
+  .accordion-item:hover .accordion-content {
+    height: 50vh;
+  }
+  .mem-btn:checked ~ .accordion-content {
+    height: 50vh;
+  }
+}
