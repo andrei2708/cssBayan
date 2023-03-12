@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+}
+.wrapper {
+  width: 820px;
+  display: flex;
+  justify-content: center;
+  background-color: #f6f6ec;
+}
+.accordion {
+  width: 90%;
+}
+.accordion:hover span {
+  display: block;
+}
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1 {
+  margin: 0;
+  padding: 20px 0;
+  font-size: 4rem;
+  font-style: italic;
+}
+p {
+  font-size: 2.5rem;
+}
+.accordion-item {
+  overflow: hidden;
+  transition: all 1s ease;
+}
+.accordion-item:hover .accordion-content {
+  height: 55vh;
+}
+.accordion-item:hover .accordion-icon {
+  opacity: 1;
+  transition: all .5s ease .3s;
+}
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #918c8c;
+  width: 100%;
+}
+.item-title {
+  display: block;
+  padding: 10px 0;
+  align-items: center;
+  width: 100%;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+.accordion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 0;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.accordion-icon {
+  height: 90%;
+  opacity: 0;
+}
+.mem-btn {
+  appearance: none;
+}
+span {
+  display: none;
+  transform: rotate(-45deg);
+  transition: all .2s ease;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 2.5rem;
+}
+.mem-btn:checked ~ .accordion-content {
+  height: 55vh;
+}
+.mem-btn:checked ~ .title-container span {
+  transform: rotate(0);
+}
+.mem-btn:checked ~ .accordion-content .accordion-icon {
+  opacity: 1;
+}
+
+@media (max-width: 1440px){
+  .wrapper {
+    width: 820px;
+  }
+  h1 {
+    font-size: 3.5rem;
+    padding: 20px 0;
+  }
+  p {
+    font-size: 2rem;
+  }
+  .item-title {
+    padding: 10px 0;
+    font-size: 2rem;
+  }
+  span {
+    font-size: 2rem;
+  }
+  .accordion-icon {
+    height: 90%;
+    opacity: 0;
+  }
+  .accordion-item:hover .accordion-content {
+    height: 50vh;
+  }
+  .mem-btn:checked ~ .accordion-content {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 819px){
+  .wrapper {
+    width: 100%;
+  }
+  h1 {
+    font-size: 3rem;
+    padding: 20px 0;
+  }
+  p {
+    font-size: 1.8rem;
+  }
+  .item-title {
+    padding: 15px 0;
+    font-size: 1.8rem;
+  }
+  span {
+    font-size: 2rem;
+  }
+  .accordion-icon {
+    height: 75%;
+    opacity: 0;
+  }
+  .accordion-item:hover .accordion-content {
+    height: 45vh;
+  }
+  .mem-btn:checked ~ .accordion-content {
+    height: 45vh;
+  }
+}
